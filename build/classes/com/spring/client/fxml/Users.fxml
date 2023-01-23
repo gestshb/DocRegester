@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring.client.UsersController">
+    <children>
+        <SplitPane dividerPositions="0.25631431244153413, 0.7502338634237605" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane>
+                    <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="10.0">
+                            <children>
+                                <GridPane prefHeight="424.0" prefWidth="328.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="99.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="188.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text=" المستخدم" GridPane.rowIndex="1" />
+                                        <Label text="كلمة السر" GridPane.rowIndex="2" />
+                                        <Label text="إعادة كلمة السر" GridPane.rowIndex="3" />
+                                        <TextField fx:id="username" prefHeight="26.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <PasswordField fx:id="password2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <CheckBox fx:id="isActive" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                        <CheckBox fx:id="isSysadmin" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                        <TextField fx:id="firstname" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                        <TextField fx:id="lastname" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                        <TextField fx:id="tel" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                        <TextField fx:id="addres" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                        <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                        <Label text="هل هو فعال" GridPane.rowIndex="5" />
+                                        <Label text="رقم المستخدم" />
+                                        <TextField fx:id="idUser" disable="true" GridPane.columnIndex="1" />
+                                        <Label text="الاسم العربي" GridPane.rowIndex="7" />
+                                        <Label text="الاسم الأجنبي" GridPane.rowIndex="8" />
+                                        <Label text="هاتف" GridPane.rowIndex="9" />
+                                        <Label text="عنوان" GridPane.rowIndex="10" />
+                                        <Label text="بريد الكتروني" GridPane.rowIndex="11" />
+                                        <Label layoutX="15.0" layoutY="329.0" text="تاريخ الإنشاء" GridPane.rowIndex="12" />
+                                        <Label text="هل هو مدير النظام" GridPane.rowIndex="6" />
+                              <TextField fx:id="creationDate" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                    </children>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0" />
+                                    </padding>
+                                </GridPane>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                    <children>
+                                        <ImageView fx:id="imageuser" fitHeight="138.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../Images/default.gif" />
+                                            </image>
+                                        </ImageView>
+                                        <Button mnemonicParsing="false" onAction="#browsImage" prefHeight="40.0" prefWidth="81.0" text="اختر صورة" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="58.0" prefWidth="302.0" spacing="5.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#refreshButton" prefHeight="40.0" prefWidth="80.0">
+                                            <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../Images/glyphicons-82-refresh.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="40.0" prefWidth="80.0">
+                                            <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="40.0" onDragDetected="#saveButton" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../Images/glyphicons-207-ok-2.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button layoutX="10.0" layoutY="19.0" mnemonicParsing="false" onAction="#deleteButton" prefHeight="40.0" prefWidth="80.0">
+                                            <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../Images/delete.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane id="Content" fx:id="anchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="749.0" prefWidth="504.0">
+                    <children>
+                  <VBox layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" />
+                              <TableView fx:id="usersTable" prefHeight="738.0" prefWidth="635.0">
+                                  <columns>
+                                      <TableColumn fx:id="usernameColumn" prefWidth="156.0" text="المستخدم" />
+                                      <TableColumn fx:id="firstNameColumn" prefWidth="255.0" text="الاسم العربي" />
+                                      <TableColumn fx:id="lastNameColumn" prefWidth="223.0" text="الاسم الأجنبي" />
+                                  </columns>
+                              </TableView>
+                     </children>
+                  </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <children>
+                                <Label text="صلاحيات المستخدم" />
+                                <ListView fx:id="userListView" prefHeight="275.0" prefWidth="311.0" />
+                                <HBox alignment="TOP_CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="81.0" prefWidth="236.0" spacing="15.0">
+                                    <children>
+                                        <Button fx:id="addPermission" mnemonicParsing="false" onAction="#addPermissionButton">
+                                            <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../Images/glyphicons-601-chevron-up.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="removePermission" mnemonicParsing="false" onAction="#removePermissionButton">
+                                            <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../Images/glyphicons-602-chevron-down.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <Label text="الصلاحيات المتاحة" />
+                                <ListView fx:id="permissionListView" prefHeight="266.0" prefWidth="236.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label fx:id="errorMessage" maxHeight="1.7976931348623157E308" maxWidth="-1.0" textFill="#c90707" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="15.0" fx:id="x3" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

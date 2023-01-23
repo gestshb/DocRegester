@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rendezvous" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="2ede515e-b3f0-4138-9431-094b22c397db">
+	<property name="ireport.zoom" value="1.610510000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<parameter name="dt2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="dt" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     Rendezvous."idRendezvous" AS Rendezvous_idRendezvous,
+     Rendezvous."date" AS Rendezvous_date,
+     Document."iddoc" AS Document_iddoc,
+     Document."orderNumber" AS Document_orderNumber,
+     Document."recipient" AS Document_recipient,
+     Document."sender" AS Document_sender,
+     Document."treated" AS Document_treated
+FROM
+     "APP"."Document" Document INNER JOIN "APP"."Rendezvous" Rendezvous ON Document."iddoc" = Rendezvous."IDDOCUMENT"
+
+where Rendezvous."date" =   $P{dt}
+
+order by Rendezvous."idRendezvous"]]>
+	</queryString>
+	<field name="RENDEZVOUS_IDRENDEZVOUS" class="java.lang.Long"/>
+	<field name="RENDEZVOUS_DATE" class="java.sql.Timestamp"/>
+	<field name="DOCUMENT_IDDOC" class="java.lang.Long"/>
+	<field name="DOCUMENT_ORDERNUMBER" class="java.lang.String"/>
+	<field name="DOCUMENT_RECIPIENT" class="java.lang.String"/>
+	<field name="DOCUMENT_SENDER" class="java.lang.String"/>
+	<field name="DOCUMENT_TREATED" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="237" splitType="Stretch">
+			<staticText>
+				<reportElement x="298" y="209" width="139" height="20" uuid="14e2dfe7-00b0-4430-8325-f8881ef4bf8d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[استعلام مواعيد يوم ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="209" width="243" height="20" uuid="0656a0ac-8885-42d9-bea1-2b05afbcd9fa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dt2}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="231" y="0" width="90" height="92" uuid="ba78f973-c47b-46a8-9a9f-60beb3c0b766"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="158" y="122" width="247" height="30" uuid="d678913d-1a82-4435-9b6f-7580e44a931a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الدائرة التنفيذية الخامسة ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="92" width="247" height="30" uuid="2d82f3a1-b480-4670-ac79-aa6286c9c5b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[محكمة التنفيذ بمحافظة جدة]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="555" height="20" uuid="9db19633-a5ce-422c-8652-55d8dbd91a16"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="485" y="2" width="70" height="20" uuid="eecffb5d-e190-4ca8-9e4d-52dc477173e6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[رقم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="2" width="112" height="20" uuid="603f6a49-27ab-4de0-ace1-6b4b8eaddfc8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[رقم الملف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="2" width="175" height="20" uuid="b3667001-a5b2-4f43-b0df-b8e2e0df0340"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[طالب التنفيذ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="197" height="20" uuid="05ab5e26-5488-41d4-ac15-39f7f17a8c63"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[المنفذ ضده]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="23" uuid="f6e667e4-af1c-4317-ae33-f0644116d0f7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="485" y="0" width="70" height="23" uuid="d68311bf-2584-434c-8144-0f2c47d2d19b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RENDEZVOUS_IDRENDEZVOUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="112" height="23" uuid="eac8b127-ac29-4505-aff5-1c6405c38884"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOCUMENT_IDDOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="175" height="23" uuid="41cbfe83-d4d5-41f0-81dd-a55a994e0913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOCUMENT_SENDER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="197" height="23" uuid="6907fc3b-88d2-4212-b3b0-86b1ae335c77"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DOCUMENT_RECIPIENT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="405" y="5" width="80" height="20" uuid="eb41a1b2-85d5-4dd7-8e3d-9d56cda67b47"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="485" y="5" width="68" height="20" uuid="240081a9-617c-44f5-aae4-4488f8926fcf"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="5" width="197" height="20" uuid="24675918-26cf-485a-82ce-0a0810c22cb5"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

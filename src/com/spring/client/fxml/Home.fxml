@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="Profile" minWidth="500.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring.client.HomeController">
+    <children>
+        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <MenuBar>
+              <menus>
+                  <Menu mnemonicParsing="false" text="البحث">
+                    <items>
+                     
+                        <MenuItem mnemonicParsing="false" onAction="#findDocumentButton" text="البحث في الملفات" />
+                        <MenuItem mnemonicParsing="false" onAction="#findRendezvous" text="البحث في المواعيد" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="الإدارة">
+                  <items>
+                        
+                    <MenuItem mnemonicParsing="false" onAction="#userButton" text="إدارة المستخدمين" />
+                       
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="تحرير">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addDocumentButton" text="إضافة ملف" />
+                        
+                        <MenuItem mnemonicParsing="false" onAction="#addTypeButton" text="إضافة نوع أو تعديله" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="مساعدة">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="حول البرنامج" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+                <ToolBar prefHeight="29.0" prefWidth="1090.0">
+                    <items>
+                        <Button mnemonicParsing="false" onAction="#userButton" prefHeight="60.0" prefWidth="140.0" text="المستخدمون">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Login%20Manager.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button mnemonicParsing="false" onAction="#addDocumentButton" prefHeight="60.0" prefWidth="140.0" text="ملف جديد">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/_Add-Files-To-Archive-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                 
+                  <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#findDocumentButton" prefHeight="60.0" prefWidth="140.0" text="الملفات">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Search-Folder-icon2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="ابحث في المستندات" />
+                     </tooltip></Button>
+                  <Button layoutX="154.0" layoutY="10.0" mnemonicParsing="false" onAction="#findRendezvous" prefHeight="60.0" prefWidth="140.0" text="المواعيد">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/24h-rendez-vous-nouveaux-icone-3660-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="426.0" layoutY="10.0" mnemonicParsing="false" onAction="#addTypeButton" prefHeight="60.0" prefWidth="140.0" text="الأنواع">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Files-Word.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                    </items>
+                </ToolBar>
+            <StackPane prefHeight="479.0" prefWidth="1000.0">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="349.0" fitWidth="757.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="422.0" fitWidth="469.0">
+                     <image>
+                        <Image url="@../Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="120.0" prefWidth="1000.0">
+               <children>
+                  <Label fx:id="dateLabel" prefHeight="40.0" prefWidth="314.0" textFill="#07041b">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="loggedEmployer" prefHeight="40.0" prefWidth="349.0" textFill="#031103">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </children>
+    
+</AnchorPane>

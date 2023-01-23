@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="doc" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4f85ee80-0f59-4ca4-941d-9af7207c9aca">
+	<property name="ireport.zoom" value="1.24184264611831"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="ae7b9baf-8dc5-4545-8cbc-5445dfd9df2f"/>
+	<parameter name="iddoc" class="java.lang.Long"/>
+	<parameter name="orderNumber" class="java.lang.String"/>
+	<parameter name="registrationNumber" class="java.lang.String"/>
+	<parameter name="sender" class="java.lang.String"/>
+	<parameter name="recipient" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     procedure_."idProcedure" AS procedure__idProcedure,
+     procedure_."discription" AS procedure__discription,
+     procedure_."dateProcedure" AS procedure__dateProcedure,
+     procedure_."IDDOCUMENT" AS procedure__IDDOCUMENT
+
+FROM
+
+     "APP"."procedure_" procedure_
+where
+     procedure_."IDDOCUMENT" = $P{iddoc}]]>
+	</queryString>
+	<field name="PROCEDURE__IDPROCEDURE" class="java.lang.Long"/>
+	<field name="PROCEDURE__DISCRIPTION" class="java.lang.String"/>
+	<field name="PROCEDURE__DATEPROCEDURE" class="java.sql.Date"/>
+	<field name="PROCEDURE__IDDOCUMENT" class="java.lang.Long"/>
+	<variable name="idDoc" class="java.lang.String">
+		<variableExpression><![CDATA[$P{iddoc}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="322" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="276" y="216" width="127" height="33" uuid="f029f195-b72d-44bd-a7dc-638089bfcb0a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" pdfEncoding="Cp1256" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ملف رقم ]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Title" x="0" y="216" width="266" height="33" uuid="300fa887-7c30-4590-96b3-f98693d30ba7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{iddoc}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="299" y="269" width="246" height="48" uuid="427939aa-4309-4ff2-822c-c60e45380f3e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="25" y="269" width="242" height="48" uuid="80fb733d-a806-4fec-b002-0d7edfe9fd64"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="317" y="269" width="126" height="20" isRemoveLineWhenBlank="true" uuid="4377a321-87c1-41d3-9e30-6d573b6d316b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="269" width="157" height="24" uuid="5ba3a152-df1e-4673-b0f1-dbc936557478"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="293" width="157" height="24" uuid="f5abedcf-ec4e-4051-8d8a-2657a27258da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{recipient}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="273" width="100" height="20" uuid="7e939110-1bb6-480a-96b0-93d1d4bcb6cf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[طالب التنفيذ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="297" width="100" height="20" uuid="61efe593-a70f-4ad2-8652-6ed3e8513785"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[المنفذ ضده]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="269" width="100" height="20" uuid="231df9d2-8975-439d-a0b4-f78b3c68c2b0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[نوع الطلب]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="293" width="100" height="20" uuid="14fa9fa2-cfb5-4099-8dae-d9eef01eccb8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[رقم الطلب]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="293" width="126" height="20" uuid="ae4cada9-73a8-4bc4-b067-20a6a797981d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="154" y="92" width="247" height="30" uuid="8b00d182-47d8-4973-8ce7-f0997d21b97b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[محكمة التنفيذ بمحافظة جدة]]></text>
+			</staticText>
+			<image>
+				<reportElement x="227" y="0" width="90" height="92" uuid="b8e81e78-fa1e-4b91-961b-17846b9c5470"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="154" y="122" width="247" height="30" uuid="9ae09759-5d8e-4b14-90aa-357fa05687a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الدائرة التنفيذية الخامسة ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="555" height="24" uuid="9df65d9c-24b9-430a-9c0d-81dbbe7eab28"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="445" y="2" width="100" height="20" uuid="d66f9fe1-3150-48e9-84eb-f0ddcbb51458"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[رقم الإجراء]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="256" y="2" width="189" height="20" uuid="09f37fa1-f47d-479e-b34c-aca88ebc41fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[تاريخ الإجراء]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="0" y="2" width="256" height="20" uuid="574a9c8e-a1c1-409f-8193-cb90a5a9dace"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[الإجراء]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" uuid="94ee3941-a7ce-4612-a268-7370ea53014d"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="100" height="20" uuid="d794ba87-b311-4ad1-b84d-91aafef23fa0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROCEDURE__IDPROCEDURE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="256" y="0" width="189" height="20" uuid="1176efdb-604d-4a5e-9a5a-499c20da8318"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROCEDURE__DATEPROCEDURE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="256" height="20" uuid="2bb593ba-9879-4b44-8ba5-97d5634e28e0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PROCEDURE__DISCRIPTION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="614cc616-0bb4-47b7-9f6a-d948944eafeb"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="1dc39f42-b562-40e3-9106-6c2795f318d0"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="b919a04d-fece-4378-a9aa-e864e4f44a88"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

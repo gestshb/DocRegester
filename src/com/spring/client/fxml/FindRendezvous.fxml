@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="800.0" prefWidth="1300.0" styleClass="label" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring.client.FindRendezvous">
+    <children>
+      <ImageView fx:id="header" fitHeight="100.0" fitWidth="774.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></ImageView>
+        <AnchorPane minHeight="125.0" minWidth="0.0" prefHeight="160.0" prefWidth="1300.0">
+            <children>
+                <GridPane layoutX="24.6" layoutY="1.0" prefHeight="114.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="1.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="128.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="128.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="128.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="79.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="331.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="رقم الملف" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="iddoc" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="طالب التنفيذ" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="sender" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="types" prefHeight="25.0" prefWidth="160.0" GridPane.columnIndex="5" />
+                        <Label text="النوع" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+                            <GridPane.margin>
+                                <Insets left="20.0" right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <DatePicker fx:id="rendDate1" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="rendDate2" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label text="تاريخ الموعد من" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="إلى" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="20.0" right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="رقم القيد" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                            <GridPane.margin>
+                                <Insets left="20.0" right="10.0" />
+                            </GridPane.margin>
+                        </Label>
+                  <HBox alignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="282.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#search" prefHeight="50.0" prefWidth="60.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clear" prefHeight="50.0" prefWidth="60.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/dit-clear.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="80.0" layoutY="10.0" mnemonicParsing="false" onAction="#print" prefHeight="38.0" prefWidth="60.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Images/emblem_print.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <CheckBox fx:id="preview" mnemonicParsing="false" text="معاينة" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <CheckBox fx:id="hidjri" mnemonicParsing="false" text="هجري" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <TextField fx:id="registrationNumber" GridPane.columnIndex="3" />
+                  <Label text="المنفذ ضده" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="recipient" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="رقم الطلب" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="orderNumber" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="idRend" GridPane.columnIndex="1" />
+                  <Label text="رقم الموعد" GridPane.halignment="RIGHT">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="300.0" prefWidth="1300.0">
+         <children>
+            <TableView fx:id="rendezvousTable" prefHeight="290.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                  <TableColumn fx:id="idRendCol" prefWidth="100.0" text="رقم الموعد" />
+                  <TableColumn fx:id="iddocCol" prefWidth="100.0" text="رقم الملف" />
+                <TableColumn fx:id="senderCol" prefWidth="200.0" text="طالب التنفيذ" />
+                <TableColumn fx:id="recipientCol" prefWidth="160.0" text="المنفذ ضده" />
+                  <TableColumn fx:id="registrationNumberCol" prefWidth="150.0" text="رقم القيد" />
+                  <TableColumn fx:id="orderNumberCol" prefWidth="150.0" text="رقم الطلب" />
+                  <TableColumn fx:id="docDateCol" prefWidth="160.0" text="تاريخ الموعد" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+    </children>
+</VBox>

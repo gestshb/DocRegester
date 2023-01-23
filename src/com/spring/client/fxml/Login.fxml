@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="402.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring.client.LoginController">
+    <children>
+        <VBox id="VBox" alignment="CENTER" layoutX="73.0" prefHeight="421.0" prefWidth="380.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView id="app-login-logo" fitHeight="88.0" fitWidth="84.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/login.png" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </ImageView>
+                <TextField id="textField1" fx:id="user" prefHeight="39.0" prefWidth="380.0" promptText="اسم الدخول">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextField>
+                <PasswordField id="passwordField1" fx:id="password" prefHeight="39.0" prefWidth="380.0" promptText="كلمة السر">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </PasswordField>
+            <StackPane prefHeight="53.0" prefWidth="344.0">
+               <children>
+                  <ProgressIndicator fx:id="indicator" prefHeight="68.0" prefWidth="359.0" />
+                      <Button id="button1" fx:id="login" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" onAction="#processLogin" prefHeight="43.0" prefWidth="143.0" text="دخول">
+                          <font>
+                              <Font size="12.0" />
+                          </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <effect>
+                        <Reflection />
+                     </effect>
+      
+                                  </Button>
+                  <Button id="button1" fx:id="connect" alignment="CENTER" contentDisplay="CENTER" layoutX="129.0" layoutY="15.0" onAction="#reconnect" prefHeight="43.0" prefWidth="143.0" text="أعد الاتصال">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </Button>
+               </children>
+            </StackPane>
+                <Label id="label2" fx:id="errorMessage" />
+            </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+        </VBox>
+    </children>
+
+            
+      </AnchorPane>
